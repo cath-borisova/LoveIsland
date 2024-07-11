@@ -18,3 +18,25 @@ html(lang='en')
 						.episode(id=e).locked
 							p #{e} 
 					-e++
+		.content
+			.feed 
+				each post in posts
+					.post(class = post[1], id = post[0])
+						p #{post[2]}
+						p Likes: #{post[4]}
+						p Comments: #{post[3]}
+						p Username: #{post[5]}
+						//time stamps
+			.topposts 
+				h2 Trending
+				//change to top posts
+				each post in posts
+					.toppost(class = post[1], id = post[0])
+						p #{post[2]}
+						p Likes: #{post[4]}
+						p Comments: #{post[2].length}
+						p Username: #{post[5]}
+						//time stamps
+			
+			
+

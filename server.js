@@ -6,11 +6,13 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use("/", express.static("resources"));
 
-const posts = [[]]; // [episode, text, [comments], likes, username]
+const posts = [[1, 10, "leah is annoying", ["no way! leah is my fav"], 4, "cathborisova"], 
+	[2, 25, "kaylor needs to break up with aaron already", ["yes omg he is so annoying", "he is such a manipulator"], 5, "cathy"],
+	[3, 1, "what is love island?", [], 0, "anonymous"]]; // [id, episode, text, [comments], likes, username]
 app.get("/", async(req, res) => {
 	res.set('Content-Type', 'text/html');
 	res.status(200);
-	res.render("index.pug", {episodes: 28, posts: ["leah is annoying", "kaylor needs to break up with aaron already"]});
+	res.render("index.pug", {episodes: 28, posts: posts});
 });
 
 app.use((req, res) => {
