@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/cath-borisova/LoveIsland#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
+    "firebase": "^10.12.3",
+    "nodemon": "^3.1.4",
     "pug": "^3.0.3"
   }
 }
